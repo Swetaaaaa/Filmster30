@@ -4,10 +4,19 @@
   <title>Filmster</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans:300,400,600,700 rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans:300,400,600,700" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+<%if user_signed_in?%>
+<%= link_to 'Log Out',destroy_user_session_path,method: :delete %>
+<%= link_to 'Edit Settings',edit_user_registration_path%>
+<%else%>
+<%= link_to 'Sign Up',new_user_registration_path%>
+<%= link_to 'Log In',new_user_session_path%>
+<%end%>
+</nav>
   <div class = "navbar-header">
     <button type="buttton" class="navbar-toggle-collapsed" data-toggle ="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>

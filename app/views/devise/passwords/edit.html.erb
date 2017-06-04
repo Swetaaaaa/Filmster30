@@ -6,9 +6,11 @@
 <div class="field">
   <%=f.label :username%><br/>
   <%=f.text_field :username, autofocus: true%>
-  
-  
-</div>
+  </div>
+  <div class="field">
+    <%=f.label :avatar%><br/>
+    <%=f.file_field :avatar,autofocus; true%>
+  </div>
 <div class="field">
   <%=f.label :introduction%><br/>
   <%=f.text_field :introduction,autofocus: true%>

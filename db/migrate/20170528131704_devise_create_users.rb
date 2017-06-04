@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :introduction
    t.string :username,unique: true
+   t.string :avatar
   
       t.timestamps null: false
     end
